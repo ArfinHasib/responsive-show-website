@@ -30,5 +30,34 @@ const linkAction = () => {
 navLink.forEach((n) => n.addEventListener('click', linkAction));
 
 /*=============== SWIPER SHOE ===============*/
+let swiperShoes = new Swiper('.home__swiper', {
+  loop: true,
+  spaceBetween: 32,
+  grabCursor: true,
+  effect: 'creative',
+  creativeEffect: {
+    prev: {
+      translate: [-100, 0, -500],
+      opacity: 0,
+    },
+    next: {
+      translate: [100, 0, -500],
+      opacity: 0,
+    },
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
 /*=============== SHADOW HEADER ===============*/
+const scrollHeader = () => {
+  const header = document.getElementById('header');
+  // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
+  this.scrollY >= 50
+    ? header.classList.add('shadow-header')
+    : header.classList.remove('shadow-header');
+};
+window.addEventListener('scroll', scrollHeader);
